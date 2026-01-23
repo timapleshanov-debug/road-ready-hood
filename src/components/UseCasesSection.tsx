@@ -67,7 +67,18 @@ const UseCasesSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.15 }}
+              animate={{ 
+                boxShadow: [
+                  "0 0 0 0 rgba(249, 115, 22, 0)",
+                  "0 0 20px 4px rgba(249, 115, 22, 0.3)",
+                  "0 0 0 0 rgba(249, 115, 22, 0)"
+                ]
+              }}
               className="group relative p-8 card-gradient rounded-2xl border border-border hover:border-primary/50 transition-all duration-300"
+              style={{
+                animation: `pulse-glow 3s ease-in-out infinite`,
+                animationDelay: `${index * 0.5}s`
+              }}
             >
               <div className="w-16 h-16 mx-auto flex items-center justify-center bg-primary/20 rounded-full mb-6 group-hover:scale-110 transition-transform duration-300">
                 <pkg.icon className="w-8 h-8 text-primary" />

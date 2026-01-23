@@ -86,10 +86,15 @@ const ContactSection = () => {
               Оставить <span className="text-gradient">заявку</span>
             </h2>
           </div>
-          <div className="flex items-center justify-center gap-2 text-primary mb-4">
-            <Truck className="w-6 h-6" />
-            <span className="text-xl font-semibold">Бесплатная доставка</span>
-          </div>
+          <motion.div 
+            initial={{ scale: 0.9 }}
+            animate={{ scale: [1, 1.05, 1] }}
+            transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
+            className="inline-flex items-center justify-center gap-3 px-6 py-3 bg-gradient-to-r from-primary to-orange-500 rounded-full mb-4 shadow-lg shadow-primary/30"
+          >
+            <Truck className="w-7 h-7 text-primary-foreground" />
+            <span className="text-xl font-bold text-primary-foreground uppercase tracking-wide">Бесплатная доставка</span>
+          </motion.div>
           <p className="text-xl text-muted-foreground">
             Заполните форму и мы свяжемся с вами
           </p>

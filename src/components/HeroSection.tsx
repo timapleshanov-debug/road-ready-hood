@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import heroImage from "@/assets/hero-car-new.jpg";
-import viturLogo from "@/assets/vitur-logo.jpg";
 
 const HeroSection = () => {
   const scrollToSection = () => {
@@ -61,15 +60,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7 }}
-            className="flex flex-col items-center gap-4"
           >
-            {/* Logo Image */}
-            <img
-              src={viturLogo}
-              alt="Витур"
-              className="w-32 h-auto rounded-lg shadow-lg"
-            />
-            
             <a
               href="#contact"
               className="inline-flex items-center gap-2 px-8 py-4 text-lg font-semibold accent-gradient text-primary-foreground rounded-full glow-effect hover:scale-105 transition-transform duration-300"
