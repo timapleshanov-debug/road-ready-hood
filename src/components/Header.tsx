@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Shield } from "lucide-react";
+import viturLogo from "@/assets/vitur-logo.jpg";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -55,6 +56,11 @@ const Header = () => {
             >
               Заказать
             </a>
+            <img
+              src={viturLogo}
+              alt="Витур"
+              className="w-10 h-10 rounded-lg object-cover ml-2"
+            />
           </nav>
 
           {/* Mobile Menu Button */}
