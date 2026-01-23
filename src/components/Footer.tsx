@@ -9,7 +9,7 @@ const Footer = () => {
             <div className="w-10 h-10 flex items-center justify-center bg-primary rounded-lg">
               <Shield className="w-6 h-6 text-primary-foreground" />
             </div>
-            <span className="text-xl font-bold">Капот на время</span>
+            <span className="text-xl font-bold text-foreground">Витур</span>
           </div>
 
           <nav className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
@@ -25,7 +25,7 @@ const Footer = () => {
           </nav>
 
           <p className="text-sm text-muted-foreground">
-            © 2025 Капот на время. Все права защищены.
+            © 2025 Витур. Все права защищены.
           </p>
         </div>
       </div>

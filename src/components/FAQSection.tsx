@@ -9,7 +9,7 @@ import {
 const faqs = [
   {
     question: "Остаётся ли клей после снятия плёнки?",
-    answer: "Нет, плёнка снимается чисто, без следов клея на лакокрасочном покрытии. Специальный адгезивный слой позволяет легко удалить плёнку.",
+    answer: "Нет, плёнка снимается чисто, без следов клея на лакокрасочном покрытии.",
   },
   {
     question: "Повреждает ли плёнка ЛКП?",
@@ -29,7 +29,7 @@ const faqs = [
   },
   {
     question: "Как долго плёнка может находиться на капоте?",
-    answer: "Плёнку можно оставлять на капоте до 2 недель. Для более длительного хранения рекомендуем снять её и при необходимости наклеить заново.",
+    answer: "Плёнка рассчитана на одну поездку.",
   },
 ];
 
@@ -44,7 +44,7 @@ const FAQSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-foreground">
             Частые <span className="text-gradient">вопросы</span>
           </h2>
           <p className="text-xl text-muted-foreground">
@@ -66,7 +66,7 @@ const FAQSection = () => {
                 value={`item-${index}`}
                 className="card-gradient rounded-xl border border-border px-6 data-[state=open]:border-primary/50"
               >
-                <AccordionTrigger className="text-left text-lg font-medium py-5 hover:no-underline hover:text-primary transition-colors">
+                <AccordionTrigger className="text-left text-lg font-medium py-5 hover:no-underline hover:text-primary transition-colors text-foreground">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground pb-5">
