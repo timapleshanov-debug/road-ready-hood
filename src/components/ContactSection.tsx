@@ -233,21 +233,6 @@ const ContactSection = () => {
               
               <div className="space-y-4">
                 <a
-                  href="https://t.me/kapotnatime"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 bg-card rounded-xl hover:bg-card/80 transition-colors"
-                >
-                  <div className="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-full">
-                    <MessageCircle className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <div className="font-medium text-foreground">Telegram</div>
-                    <div className="text-sm text-muted-foreground">@kapotnatime</div>
-                  </div>
-                </a>
-
-                <a
                   href="mailto:vlad-pu@mail.ru"
                   className="flex items-center gap-4 p-4 bg-card rounded-xl hover:bg-card/80 transition-colors"
                 >
