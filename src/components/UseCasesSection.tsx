@@ -1,44 +1,49 @@
 import { motion } from "framer-motion";
-import { Mountain, Navigation, MapPin, Route } from "lucide-react";
-import mountainRoad from "@/assets/mountain-road.jpg";
+import { Package, Star, Crown } from "lucide-react";
 
-const useCases = [
+const packages = [
   {
-    icon: Mountain,
-    title: "Горы",
-    description: "Серпантины и гравийные участки",
+    icon: Package,
+    title: "Базовый",
+    items: [
+      "Плёнка ТПУ Витур 680/1500 мм",
+      "Ракель",
+      "Салфетка",
+      "Волшебный состав для простой приклейки",
+      "Инструкция",
+    ],
   },
   {
-    icon: Navigation,
-    title: "Трасса",
-    description: "Высокие скорости, много камней",
+    icon: Star,
+    title: "Продвинутый",
+    items: [
+      "Плёнка ТПУ Витур 680/1500 мм",
+      "Плёнка ТПУ Витур 250/1500 мм",
+      "Ракель",
+      "Салфетка",
+      "Волшебный состав для простой приклейки",
+      "Инструкция",
+    ],
   },
   {
-    icon: MapPin,
-    title: "Дальние поездки",
-    description: "Сотни километров под защитой",
-  },
-  {
-    icon: Route,
-    title: "Бездорожье",
-    description: "Грунтовки и гравийные дороги",
+    icon: Crown,
+    title: "Максимальный",
+    items: [
+      "Плёнка ТПУ Витур 750/1800 мм",
+      "Плёнка ТПУ 300/1800 мм",
+      "2 плёнки 250/300 мм для зеркал",
+      "Ракель",
+      "Салфетка",
+      "Волшебный состав для простой приклейки",
+      "Инструкция",
+    ],
   },
 ];
 
 const UseCasesSection = () => {
   return (
-    <section className="py-24 relative overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0">
-        <img
-          src={mountainRoad}
-          alt="Горная дорога"
-          className="w-full h-full object-cover opacity-30"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/90 to-background" />
-      </div>
-
-      <div className="container mx-auto px-6 relative z-10">
+    <section className="py-24 bg-charcoal">
+      <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -46,29 +51,36 @@ const UseCasesSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">
-            Для каких <span className="text-gradient">поездок</span> подходит
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-foreground">
+            Выберите <span className="text-gradient">комплект</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Везде, где дорога может повредить ваш капот
+            Подберите оптимальный вариант для вашего автомобиля
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {useCases.map((useCase, index) => (
+        <div className="grid md:grid-cols-3 gap-8">
+          {packages.map((pkg, index) => (
             <motion.div
-              key={useCase.title}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              key={pkg.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative p-8 bg-card/80 backdrop-blur-sm rounded-2xl border border-border hover:border-primary/50 transition-all duration-300 text-center"
+              transition={{ duration: 0.5, delay: index * 0.15 }}
+              className="group relative p-8 card-gradient rounded-2xl border border-border hover:border-primary/50 transition-all duration-300"
             >
-              <div className="w-20 h-20 mx-auto flex items-center justify-center bg-primary/20 rounded-full mb-6 group-hover:scale-110 transition-transform duration-300">
-                <useCase.icon className="w-10 h-10 text-primary" />
+              <div className="w-16 h-16 mx-auto flex items-center justify-center bg-primary/20 rounded-full mb-6 group-hover:scale-110 transition-transform duration-300">
+                <pkg.icon className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">{useCase.title}</h3>
-              <p className="text-muted-foreground">{useCase.description}</p>
+              <h3 className="text-2xl font-bold mb-6 text-center text-foreground">{pkg.title}</h3>
+              <ul className="space-y-3">
+                {pkg.items.map((item, itemIndex) => (
+                  <li key={itemIndex} className="flex items-start gap-2 text-muted-foreground">
+                    <span className="text-primary mt-1">•</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </motion.div>
           ))}
         </div>
