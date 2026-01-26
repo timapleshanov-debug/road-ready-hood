@@ -59,7 +59,7 @@ const Header = () => {
             <img
               src={viturLogo}
               alt="Витур"
-              className="w-16 h-16 rounded-lg object-cover ml-2"
+              className="w-20 h-20 rounded-lg object-cover ml-2"
             />
           </nav>
 

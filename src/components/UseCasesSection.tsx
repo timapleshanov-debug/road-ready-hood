@@ -5,6 +5,7 @@ const packages = [
   {
     icon: Package,
     title: "Базовый",
+    price: "3 990 ₽",
     items: [
       "Плёнка ТПУ Витур 680/1500 мм",
       "Ракель",
@@ -16,6 +17,7 @@ const packages = [
   {
     icon: Star,
     title: "Продвинутый",
+    price: "5 990 ₽",
     items: [
       "Плёнка ТПУ Витур 680/1500 мм",
       "Плёнка ТПУ Витур 250/1500 мм",
@@ -28,6 +30,7 @@ const packages = [
   {
     icon: Crown,
     title: "Максимальный",
+    price: "8 990 ₽",
     items: [
       "Плёнка ТПУ Витур 750/1800 мм",
       "Плёнка ТПУ 300/1800 мм",
@@ -83,7 +86,8 @@ const UseCasesSection = () => {
               <div className="w-16 h-16 mx-auto flex items-center justify-center bg-primary/20 rounded-full mb-6 group-hover:scale-110 transition-transform duration-300">
                 <pkg.icon className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="text-2xl font-bold mb-6 text-center text-foreground">{pkg.title}</h3>
+              <h3 className="text-2xl font-bold mb-2 text-center text-foreground">{pkg.title}</h3>
+              <div className="text-3xl font-bold text-center text-primary mb-6">{pkg.price}</div>
               <ul className="space-y-3">
                 {pkg.items.map((item, itemIndex) => (
                   <li key={itemIndex} className="flex items-start gap-2 text-muted-foreground">
