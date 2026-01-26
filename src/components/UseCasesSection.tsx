@@ -86,8 +86,8 @@ const UseCasesSection = () => {
               <div className="w-16 h-16 mx-auto flex items-center justify-center bg-primary/20 rounded-full mb-6 group-hover:scale-110 transition-transform duration-300">
                 <pkg.icon className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="text-2xl font-bold mb-2 text-center text-foreground">{pkg.title}</h3>
-              <div className="text-3xl font-bold text-center text-primary mb-6">{pkg.price}</div>
+              <h3 className="text-2xl font-bold text-center text-foreground">{pkg.title}</h3>
+              <div className="text-3xl font-extrabold text-center text-primary my-4">{pkg.price}</div>
               <ul className="space-y-3">
                 {pkg.items.map((item, itemIndex) => (
                   <li key={itemIndex} className="flex items-start gap-2 text-muted-foreground">
