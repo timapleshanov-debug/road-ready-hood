@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import { useState, useMemo } from "react";
-import { Send, MessageCircle, Phone, Mail, Truck } from "lucide-react";
+import { useState } from "react";
+import { Send, Phone, Mail, Truck } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const filmOptions = ["Базовый", "Продвинутый", "Максимальный"];
 
@@ -45,24 +46,31 @@ const ContactSection = () => {
 
     setIsSubmitting(true);
 
-    // Create mailto link with form data
-    const subject = encodeURIComponent(`Заявка на плёнку: ${formData.filmOption}`);
-    const body = encodeURIComponent(
-      `ФИО: ${formData.fullName}\nТелефон: ${formData.phone}\nГород: ${formData.city}\nВариант плёнки: ${formData.filmOption}`
-    );
-    
-    // Open email client
-    window.location.href = `mailto:vlad-pu@mail.ru?subject=${subject}&body=${body}`;
+    try {
+      const { data, error } = await supabase.functions.invoke("send-order", {
+        body: formData,
+      });
 
-    toast({
-      title: "Заявка отправлена!",
-      description: "Мы свяжемся с вами в ближайшее время",
-    });
+      if (error) throw error;
 
-    setFormData({ fullName: "", phone: "", city: "", filmOption: "" });
-    setCaptchaInput("");
-    refreshCaptcha();
-    setIsSubmitting(false);
+      toast({
+        title: "Заявка отправлена!",
+        description: "Мы свяжемся с вами в ближайшее время",
+      });
+
+      setFormData({ fullName: "", phone: "", city: "", filmOption: "" });
+      setCaptchaInput("");
+      refreshCaptcha();
+    } catch (error: any) {
+      console.error("Error sending order:", error);
+      toast({
+        title: "Ошибка",
+        description: "Не удалось отправить заявку. Попробуйте позже.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
