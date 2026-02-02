@@ -7,8 +7,7 @@ import {
   Hand, 
   Wrench, 
   Clock, 
-  Trash2,
-  Play
+  Trash2
 } from "lucide-react";
 
 const steps = [
@@ -51,19 +50,13 @@ const InstructionSection = () => {
             className="relative"
           >
             <div className="relative rounded-2xl overflow-hidden shadow-elevated border border-border/50">
-              <video
-                controls
+              <iframe
+                src="https://rutube.ru/play/embed/2ff5dfee4edfbd0a59523e29319d8faf?p=VUZ7VrDJ0Urb8geexKz-Pw"
                 className="w-full aspect-video bg-background"
-                preload="metadata"
-              >
-                <source src="/videos/instruction.mp4" type="video/mp4" />
-                Ваш браузер не поддерживает видео.
-              </video>
+                allow="clipboard-write; autoplay"
+                allowFullScreen
+              />
               <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 via-transparent to-primary/20 rounded-2xl blur-xl -z-10" />
-            </div>
-            <div className="flex items-center justify-center gap-2 mt-4 text-muted-foreground">
-              <Play className="w-4 h-4 text-primary" />
-              <span className="text-sm">Нажмите для воспроизведения</span>
             </div>
           </motion.div>
 
