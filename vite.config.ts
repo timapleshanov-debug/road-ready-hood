@@ -11,7 +11,6 @@ export default defineConfig(({ mode }) => ({
     hmr: {
       overlay: false,
     },
-    'autovitur.ru'
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
